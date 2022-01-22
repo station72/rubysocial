@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: rubysocial
-        image: almaleksia/rubysocial:v0.2
+        image: almaleksia/rubysocial:{{ .Values.version }}
         ports:
         - containerPort: 3000
         env:
@@ -39,4 +39,4 @@ spec:
           - name: STATIC_FILES_ENDPOINT
             value: https://rubysocial-static.s3.eu-central-1.amazonaws.com
           - name: FRONTEND_VERSION
-            value: v0.2
+            value: {{ .Values.version }}
